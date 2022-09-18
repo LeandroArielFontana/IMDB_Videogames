@@ -36,9 +36,8 @@ class ApiControllerImpl(
         ResponseEntity.ok(videogameServiceImpl.getVideogamesByYear(year = videogameYear))
 
     @GetMapping("/name/{name}")
-    override fun getVideogameByName(videogameName: String): ResponseEntity<VideogameDTO> {
-        TODO("Not yet implemented")
-    }
+    override fun getVideogameByName(videogameName: String): ResponseEntity<VideogameDTO> =
+        ResponseEntity.ok(videogameServiceImpl.getVideogameByName(videogameName))
 
     @GetMapping("/echo")
     override fun echo(): ResponseEntity<String> = ResponseEntity.ok(ApiConstant.ECHO)
