@@ -7,40 +7,36 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import personal.videogames.constant.ApiConstant
 import personal.videogames.controller.ApiController
-import personal.videogames.dto.Videogame
-import personal.videogames.service.VideogameService
+import personal.videogames.dto.VideogameDTO
+import personal.videogames.service.impl.VideogameServiceImpl
 
 @RestController
 @RequestMapping("/v1/core/api-videogame")
 class ApiControllerImpl(
 
     @Autowired
-    val videogameService: VideogameService
+    val videogameServiceImpl: VideogameServiceImpl
 
 ) : ApiController {
 
     @GetMapping("/videogames")
-    override fun getAllVideogames(): ResponseEntity<List<Videogame>> {
-        TODO("Not yet implemented")
-    }
+    override fun getAllVideogames(): ResponseEntity<List<VideogameDTO>> =
+        ResponseEntity.ok(videogameServiceImpl.getAllVideogames())
 
     @GetMapping("/id/{idVideogame}")
-    override fun getVideogameById(): ResponseEntity<Videogame> {
-        TODO("Not yet implemented")
-    }
+    override fun getVideogameById(idVideogame: Int): ResponseEntity<VideogameDTO> =
+        ResponseEntity.ok(videogameServiceImpl.getVideogameById(id = idVideogame))
 
     @GetMapping("/category/{category}")
-    override fun getVideogamesByCategory(): ResponseEntity<List<Videogame>> {
-        TODO("Not yet implemented")
-    }
+    override fun getVideogamesByCategory(videogameCategory: String): ResponseEntity<List<VideogameDTO>> =
+        ResponseEntity.ok(videogameServiceImpl.getVideogamesByCategory(category = videogameCategory))
 
     @GetMapping("/year/{year}")
-    override fun getVideogamesByYear(): ResponseEntity<List<Videogame>> {
-        TODO("Not yet implemented")
-    }
+    override fun getVideogamesByYear(videogameYear: Int): ResponseEntity<List<VideogameDTO>> =
+        ResponseEntity.ok(videogameServiceImpl.getVideogamesByYear(year = videogameYear))
 
     @GetMapping("/name/{name}")
-    override fun getVideogameByName(): ResponseEntity<Videogame> {
+    override fun getVideogameByName(videogameName: String): ResponseEntity<VideogameDTO> {
         TODO("Not yet implemented")
     }
 

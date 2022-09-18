@@ -1,6 +1,6 @@
 package personal.videogames.dto
 
-data class Videogame(
+data class VideogameDTO(
     val id: Int,
     val name: String,
     val url: String,
