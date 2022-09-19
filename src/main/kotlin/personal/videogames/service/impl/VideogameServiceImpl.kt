@@ -14,7 +14,7 @@ class VideogameServiceImpl(
 
     override fun getAllVideogames(): MutableList<Videogames> = videogameRepository.findAll()
 
-    override fun getVideogameByName(name: String): Videogames = videogameRepository.getVideogameByName(name = name)
+    override fun getVideogameByName(name: String): MutableList<Videogames> = videogameRepository.getVideogameByName(name = name)
 
     override fun getVideogameById(id: Int): Videogames = videogameRepository.getVideogameById(id = id)
 

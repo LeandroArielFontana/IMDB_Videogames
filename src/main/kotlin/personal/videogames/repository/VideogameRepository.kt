@@ -10,7 +10,7 @@ import personal.videogames.model.Videogames
 @Repository
 interface VideogameRepository : JpaRepository<Videogames, Int> {
     @Query(QueryConstant.FIND_BY_NAME, nativeQuery = true)
-    fun getVideogameByName(@Param("name") name: String): Videogames
+    fun getVideogameByName(@Param("name") name: String): MutableList<Videogames>
 
     @Query(QueryConstant.FIND_BY_ID, nativeQuery = true)
     fun getVideogameById(@Param("id") id: Int): Videogames
