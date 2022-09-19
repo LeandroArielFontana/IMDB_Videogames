@@ -25,7 +25,7 @@ interface ApiController {
 
     fun getVideogameByName(
         @RequestParam videogameName: String
-    ): ResponseEntity<Videogames>
+    ): ResponseEntity<MutableList<Videogames>>
 
     fun echo(): ResponseEntity<String>
 }

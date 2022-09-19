@@ -7,11 +7,11 @@ import personal.videogames.model.Videogames
 interface VideogameService {
     fun getVideogameById(id: Int): Videogames
 
-    fun getVideogameByName(name: String): Videogames
+    fun getVideogameByName(name: String): MutableList<Videogames>
 
     fun getAllVideogames(): MutableList<Videogames>
 
     fun getVideogamesByCategory(category: String): MutableList<Videogames>
 
-    fun getVideogamesByYear(year: Int): List<Videogames>
+    fun getVideogamesByYear(year: Int): MutableList<Videogames>
 }

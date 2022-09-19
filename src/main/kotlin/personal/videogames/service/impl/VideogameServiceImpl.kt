@@ -14,11 +14,11 @@ class VideogameServiceImpl(
 
     override fun getAllVideogames(): MutableList<Videogames> = videogameRepository.findAll()
 
-    override fun getVideogameByName(name: String): Videogames = videogameRepository.getVideogameByName(name = name)
+    override fun getVideogameByName(name: String): MutableList<Videogames> = videogameRepository.getVideogameByName(name = name)
 
     override fun getVideogameById(id: Int): Videogames = videogameRepository.getVideogameById(id = id)
 
-    override fun getVideogamesByCategory(category: String): MutableList<Videogames> = TODO("Not yet implemented")
+    override fun getVideogamesByYear(year: Int): MutableList<Videogames> = videogameRepository.getVideogameByYear(year = year)
 
-    override fun getVideogamesByYear(year: Int): List<Videogames> = TODO("Not yet implemented")
+    override fun getVideogamesByCategory(category: String): MutableList<Videogames> = TODO("Not yet implemented")
 }
