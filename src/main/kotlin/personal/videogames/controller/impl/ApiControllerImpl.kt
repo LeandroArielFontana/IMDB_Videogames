@@ -36,7 +36,7 @@ class ApiControllerImpl(
         ResponseEntity.ok(videogameServiceImpl.getVideogamesByYear(year = videogameYear))
 
     @GetMapping("/name")
-    override fun getVideogameByName(videogameName: String): ResponseEntity<Videogames> =
+    override fun getVideogameByName(videogameName: String): ResponseEntity<MutableList<Videogames>> =
         ResponseEntity.ok(videogameServiceImpl.getVideogameByName(videogameName))
 
     @GetMapping("/echo")
