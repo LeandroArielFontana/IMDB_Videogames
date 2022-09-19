@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "personal"
-version = "0.0.1-SNAPSHOT"
+version = "1.0.0-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
@@ -17,6 +17,7 @@ repositories {
 }
 
 extra["springCloudVersion"] = "2021.0.4"
+extra["springDocOpenApiVersion"] = "1.6.11"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -24,13 +25,15 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
-    // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
-    implementation("org.modelmapper:modelmapper:3.1.0")
-
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("mysql:mysql-connector-java")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-kotlin
+    runtimeOnly("org.springdoc:springdoc-openapi-kotlin:${property("springDocOpenApiVersion")}")
+    // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-data-rest
+    implementation("org.springdoc:springdoc-openapi-data-rest:${property("springDocOpenApiVersion")}")
+    // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+    implementation("org.springdoc:springdoc-openapi-ui:${property("springDocOpenApiVersion")}")
 }
 
 dependencyManagement {

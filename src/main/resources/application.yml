@@ -31,15 +31,15 @@ spring:
     resources:
       add-mapping: false
 
-#resilience4j:
-#  circuitBreaker:
-#    instances:
-#      externalServices:
-#        waitDurationInOpenState: 1m
-#        permittedNumberOfCallsInHalfOpenState: 3
-#        slidingWindowType: COUNT_BASED
-#        slidingWindowSize: 5
-#        minimumNumberOfCalls: 5
-#        slowCallDurationThreshold: 10s
-#        slowCallRateThreshold: 60
-#        failureRateThreshold: 60
+spring-doc:
+  swagger-ui:
+    path: docs
+  api-docs:
+    path: /api-docs
+
+documentation:
+  openapi:
+    info:
+      title: API IMDB Videogames
+      description: API IMDB Videogames Documentation
+      version: 1.0.0
