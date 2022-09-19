@@ -1,0 +1,45 @@
+server:
+  servlet:
+    context-path: /
+  port: 8080
+  compression:
+    enabled: true
+    min-response-size: 2048
+    mime-types: application/json, application/xml, text/hmtl, text/xml, text/plain
+
+spring:
+  jpa:
+    open-in-view: false
+    hibernate:
+      dialect: org.hibernate.dialect.MySQLDialect
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/videogames
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+  application:
+    name: api-imdb-videogames
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mapping: false
+
+#resilience4j:
+#  circuitBreaker:
+#    instances:
+#      externalServices:
+#        waitDurationInOpenState: 1m
+#        permittedNumberOfCallsInHalfOpenState: 3
+#        slidingWindowType: COUNT_BASED
+#        slidingWindowSize: 5
+#        minimumNumberOfCalls: 5
+#        slowCallDurationThreshold: 10s
+#        slowCallRateThreshold: 60
+#        failureRateThreshold: 60
