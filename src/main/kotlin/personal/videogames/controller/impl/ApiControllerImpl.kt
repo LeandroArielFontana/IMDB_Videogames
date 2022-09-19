@@ -35,7 +35,7 @@ class ApiControllerImpl(
     override fun getVideogamesByYear(videogameYear: Int): ResponseEntity<List<Videogames>> =
         ResponseEntity.ok(videogameServiceImpl.getVideogamesByYear(year = videogameYear))
 
-    @GetMapping("/name/{name}")
+    @GetMapping("/name")
     override fun getVideogameByName(videogameName: String): ResponseEntity<Videogames> =
         ResponseEntity.ok(videogameServiceImpl.getVideogameByName(videogameName))
 

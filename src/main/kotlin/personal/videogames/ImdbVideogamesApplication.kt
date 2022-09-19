@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class ImbDvideogamesApplication
+class ImdbVideogamesApplication
 
 fun main(args: Array<String>) {
-    runApplication<ImbDvideogamesApplication>(*args)
+    runApplication<ImdbVideogamesApplication>(*args)
 }
