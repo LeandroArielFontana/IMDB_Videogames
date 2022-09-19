@@ -16,7 +16,7 @@ class VideogameServiceImpl(
 
     override fun getVideogameByName(name: String): Videogames = videogameRepository.getVideogameByName(name = name)
 
-    override fun getVideogameById(id: Int): Videogames = TODO("Not yet implemented")
+    override fun getVideogameById(id: Int): Videogames = videogameRepository.getVideogameById(id = id)
 
     override fun getVideogamesByCategory(category: String): MutableList<Videogames> = TODO("Not yet implemented")
 
