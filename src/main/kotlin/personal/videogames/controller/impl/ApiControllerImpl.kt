@@ -27,9 +27,9 @@ class ApiControllerImpl(
     override fun getVideogameById(idVideogame: Int): ResponseEntity<Videogames> =
         ResponseEntity.ok(videogameServiceImpl.getVideogameById(id = idVideogame))
 
-    @GetMapping("/category/{category}")
-    override fun getVideogamesByCategory(videogameCategory: String): ResponseEntity<List<Videogames>> =
-        ResponseEntity.ok(videogameServiceImpl.getVideogamesByCategory(category = videogameCategory))
+    @GetMapping("/certificate")
+    override fun getVideogamesByCertificate(certificate: String): ResponseEntity<List<Videogames>> =
+        ResponseEntity.ok(videogameServiceImpl.getVideogamesByCertificate(certificate = certificate))
 
     @GetMapping("/year/{videogameYear}")
     override fun getVideogamesByYear(videogameYear: Int): ResponseEntity<List<Videogames>> =

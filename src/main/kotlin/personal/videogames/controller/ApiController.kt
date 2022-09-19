@@ -15,8 +15,8 @@ interface ApiController {
         @PathVariable idVideogame: Int
     ): ResponseEntity<Videogames>
 
-    fun getVideogamesByCategory(
-        @PathVariable videogameCategory: String
+    fun getVideogamesByCertificate(
+        @RequestParam certificate: String
     ): ResponseEntity<List<Videogames>>
 
     fun getVideogamesByYear(
