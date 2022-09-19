@@ -3,22 +3,22 @@ package personal.videogames.controller
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.PathVariable
-import personal.videogames.dto.VideogameDTO
+import personal.videogames.model.Videogames
 
 @Validated
 interface ApiController {
 
-    fun getAllVideogames(): ResponseEntity<List<VideogameDTO>>
+    fun getAllVideogames(): ResponseEntity<MutableList<Videogames>>
 
     fun getVideogameById(
         @PathVariable idVideogame: Int
-    ): ResponseEntity<VideogameDTO>
+    ): ResponseEntity<Videogames>
 
-    fun getVideogamesByCategory(@PathVariable videogameCategory: String): ResponseEntity<List<VideogameDTO>>
+    fun getVideogamesByCategory(@PathVariable videogameCategory: String): ResponseEntity<List<Videogames>>
 
-    fun getVideogamesByYear(@PathVariable videogameYear: Int): ResponseEntity<List<VideogameDTO>>
+    fun getVideogamesByYear(@PathVariable videogameYear: Int): ResponseEntity<List<Videogames>>
 
-    fun getVideogameByName(@PathVariable videogameName: String): ResponseEntity<VideogameDTO>
+    fun getVideogameByName(@PathVariable videogameName: String): ResponseEntity<Videogames>
 
     fun echo(): ResponseEntity<String>
 }

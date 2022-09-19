@@ -1,15 +1,17 @@
 package personal.videogames.service
 
-import personal.videogames.dto.VideogameDTO
+import org.springframework.stereotype.Service
+import personal.videogames.model.Videogames
 
+@Service
 interface VideogameService {
-    fun getVideogameById(id: Int): VideogameDTO
+    fun getVideogameById(id: Int): Videogames
 
-    fun getVideogameByName(name: String): VideogameDTO
+    fun getVideogameByName(name: String): Videogames
 
-    fun getAllVideogames(): List<VideogameDTO>
+    fun getAllVideogames(): MutableList<Videogames>
 
-    fun getVideogamesByCategory(category: String): List<VideogameDTO>
+    fun getVideogamesByCategory(category: String): MutableList<Videogames>
 
-    fun getVideogamesByYear(year: Int): List<VideogameDTO>
+    fun getVideogamesByYear(year: Int): List<Videogames>
 }

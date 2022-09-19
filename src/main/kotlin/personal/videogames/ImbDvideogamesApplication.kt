@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class ImbDvideogamesApplication
 
 fun main(args: Array<String>) {
-	runApplication<ImbDvideogamesApplication>(*args)
+    runApplication<ImbDvideogamesApplication>(*args)
 }
