@@ -13,5 +13,5 @@ interface VideogameService {
 
     fun getVideogamesByCategory(category: String): MutableList<Videogames>
 
-    fun getVideogamesByYear(year: Int): List<Videogames>
+    fun getVideogamesByYear(year: Int): MutableList<Videogames>
 }

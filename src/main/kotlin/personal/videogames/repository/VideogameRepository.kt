@@ -14,4 +14,7 @@ interface VideogameRepository : JpaRepository<Videogames, Int> {
 
     @Query(QueryConstant.FIND_BY_ID, nativeQuery = true)
     fun getVideogameById(@Param("id") id: Int): Videogames
+
+    @Query(QueryConstant.FIND_BY_YEAR, nativeQuery = true)
+    fun getVideogameByYear(@Param("year") year: Int): MutableList<Videogames>
 }
