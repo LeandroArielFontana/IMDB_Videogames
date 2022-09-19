@@ -11,21 +11,14 @@ class VideogameServiceImpl(
     @Autowired
     val videogameRepository: VideogameRepository
 ) : VideogameService {
-    override fun getVideogameById(id: Int): Videogames {
-        TODO("Not yet implemented")
-    }
-
-    override fun getVideogameByName(name: String): Videogames  {
-        TODO("Not yet implemented")
-    }
 
     override fun getAllVideogames(): MutableList<Videogames> = videogameRepository.findAll()
 
-    override fun getVideogamesByCategory(category: String): MutableList<Videogames> {
-        TODO("Not yet implemented")
-    }
+    override fun getVideogameByName(name: String): Videogames = videogameRepository.getVideogameByName(name = name)
 
-    override fun getVideogamesByYear(year: Int): List<Videogames> {
-        TODO("Not yet implemented")
-    }
+    override fun getVideogameById(id: Int): Videogames = TODO("Not yet implemented")
+
+    override fun getVideogamesByCategory(category: String): MutableList<Videogames> = TODO("Not yet implemented")
+
+    override fun getVideogamesByYear(year: Int): List<Videogames> = TODO("Not yet implemented")
 }
