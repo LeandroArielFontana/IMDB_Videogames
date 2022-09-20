@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import personal.videogames.constant.ApiConstant
 import personal.videogames.controller.ApiController
-import personal.videogames.model.Videogames
+import personal.videogames.dto.response.VideogameDTO
 import personal.videogames.service.impl.VideogameServiceImpl
 
 @RestController
@@ -20,23 +20,23 @@ class ApiControllerImpl(
 ) : ApiController {
 
     @GetMapping("/videogames")
-    override fun getAllVideogames(): ResponseEntity<MutableList<Videogames>> =
+    override fun getAllVideogames(): ResponseEntity<MutableList<VideogameDTO>> =
         ResponseEntity.ok(videogameServiceImpl.getAllVideogames())
 
     @GetMapping("/id/{idVideogame}")
-    override fun getVideogameById(idVideogame: Int): ResponseEntity<Videogames> =
+    override fun getVideogameById(idVideogame: Int): ResponseEntity<VideogameDTO> =
         ResponseEntity.ok(videogameServiceImpl.getVideogameById(id = idVideogame))
 
     @GetMapping("/certificate")
-    override fun getVideogamesByCertificate(certificate: String): ResponseEntity<List<Videogames>> =
+    override fun getVideogamesByCertificate(certificate: String): ResponseEntity<List<VideogameDTO>> =
         ResponseEntity.ok(videogameServiceImpl.getVideogamesByCertificate(certificate = certificate))
 
     @GetMapping("/year/{videogameYear}")
-    override fun getVideogamesByYear(videogameYear: Int): ResponseEntity<List<Videogames>> =
+    override fun getVideogamesByYear(videogameYear: Int): ResponseEntity<List<VideogameDTO>> =
         ResponseEntity.ok(videogameServiceImpl.getVideogamesByYear(year = videogameYear))
 
     @GetMapping("/name")
-    override fun getVideogameByName(videogameName: String): ResponseEntity<MutableList<Videogames>> =
+    override fun getVideogameByName(videogameName: String): ResponseEntity<MutableList<VideogameDTO>> =
         ResponseEntity.ok(videogameServiceImpl.getVideogameByName(videogameName))
 
     @GetMapping("/echo")
