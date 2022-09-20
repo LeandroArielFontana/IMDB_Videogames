@@ -1,12 +1,12 @@
-package personal.videogames.dto
+package personal.videogames.dto.response
 
 data class VideogameDTO(
     val id: Int,
     val name: String,
     val url: String,
     val year: Int,
-    val certificate: Char,
+    val certificate: String,
     val rating: Double,
-    val votes: Int,
-    val plot: String,
+    val votes: String,
+    val plot: String
 )

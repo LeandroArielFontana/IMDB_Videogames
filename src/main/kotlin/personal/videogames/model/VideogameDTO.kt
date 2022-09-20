@@ -5,7 +5,7 @@ import javax.persistence.* // ktlint-disable no-wildcard-imports
 
 @Entity
 @EntityListeners(AuditingEntityListener::class)
-class Videogames(
+class Videogame(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

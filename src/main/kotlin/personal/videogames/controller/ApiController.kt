@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestParam
-import personal.videogames.model.Videogames
+import personal.videogames.dto.response.VideogameDTO
 
 @Validated
 interface ApiController {
@@ -15,7 +15,7 @@ interface ApiController {
         description = "returns a list of all video games in DB",
         tags = ["Get all videogames"]
     )
-    fun getAllVideogames(): ResponseEntity<MutableList<Videogames>>
+    fun getAllVideogames(): ResponseEntity<MutableList<VideogameDTO>>
 
     @Operation(
         summary = "Find a video games by ID",
@@ -24,7 +24,7 @@ interface ApiController {
     )
     fun getVideogameById(
         @PathVariable idVideogame: Int
-    ): ResponseEntity<Videogames>
+    ): ResponseEntity<VideogameDTO>
 
     @Operation(
         summary = "Find a video game by certificate",
@@ -33,7 +33,7 @@ interface ApiController {
     )
     fun getVideogamesByCertificate(
         @RequestParam certificate: String
-    ): ResponseEntity<List<Videogames>>
+    ): ResponseEntity<List<VideogameDTO>>
 
     @Operation(
         summary = "Find video games by year",
@@ -42,7 +42,7 @@ interface ApiController {
     )
     fun getVideogamesByYear(
         @PathVariable videogameYear: Int
-    ): ResponseEntity<List<Videogames>>
+    ): ResponseEntity<List<VideogameDTO>>
 
     @Operation(
         summary = "Finds video games by name",
@@ -51,7 +51,7 @@ interface ApiController {
     )
     fun getVideogameByName(
         @RequestParam videogameName: String
-    ): ResponseEntity<MutableList<Videogames>>
+    ): ResponseEntity<MutableList<VideogameDTO>>
 
     @Operation(
         summary = "echo endpoint",
