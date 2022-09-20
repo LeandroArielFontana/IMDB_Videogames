@@ -20,5 +20,5 @@ class VideogameServiceImpl(
 
     override fun getVideogamesByYear(year: Int): MutableList<Videogames> = videogameRepository.getVideogameByYear(year = year)
 
-    override fun getVideogamesByCategory(category: String): MutableList<Videogames> = TODO("Not yet implemented")
+    override fun getVideogamesByCertificate(certificate: String): MutableList<Videogames> = videogameRepository.getVideogameByCertificate(certificate = certificate)
 }

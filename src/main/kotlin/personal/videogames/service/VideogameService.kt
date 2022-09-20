@@ -11,7 +11,7 @@ interface VideogameService {
 
     fun getAllVideogames(): MutableList<Videogames>
 
-    fun getVideogamesByCategory(category: String): MutableList<Videogames>
+    fun getVideogamesByCertificate(certificate: String): MutableList<Videogames>
 
     fun getVideogamesByYear(year: Int): MutableList<Videogames>
 }

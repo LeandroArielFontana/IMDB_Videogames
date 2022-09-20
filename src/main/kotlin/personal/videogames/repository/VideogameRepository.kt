@@ -17,4 +17,7 @@ interface VideogameRepository : JpaRepository<Videogames, Int> {
 
     @Query(QueryConstant.FIND_BY_YEAR, nativeQuery = true)
     fun getVideogameByYear(@Param("year") year: Int): MutableList<Videogames>
+
+    @Query(QueryConstant.FIND_BY_CERTIFICATE, nativeQuery = true)
+    fun getVideogameByCertificate(@Param("certificate") certificate: String): MutableList<Videogames>
 }
