@@ -37,7 +37,12 @@ class OpenApiConfiguration(
 
     private fun tags() =
         mutableListOf<Tag>(
-            Tag().name("Get all videogames").description("Finds list of videogames in the DB")
+            Tag().name("Get all video games").description("Finds list of video games in the DB"),
+            Tag().name("Get video game by ID").description("Find a video game by ID in the DB"),
+            Tag().name("Get video game by certificate").description("Find a video game by certificate in DB"),
+            Tag().name("Get video games by name").description("Finds video games by name in the DB"),
+            Tag().name("Get video games by year").description("Finds video games in DB by year"),
+            Tag().name("Echo").description("echo endpoint")
         )
 
     @Bean
