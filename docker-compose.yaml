@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysqldb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_USERNAME: root
+      MYSQL_DATABASE: videogames
+    ports:
+      - '3306:3306'
+    volumes:
+      - data:/var/lib/mysql/data
+
+  api-imdb-videogames:
+    image: api-imdb-videogames:latest
+    container_name: api-imdb
+    depends_on:
+      - mysql
+    environment:
+      LOG_LEVEL: debug
+      DB_URL: jdbc:mysql://mysql:3306/mysqldb
+      DB_USERNAME: root
+      DB_PASSWORD: root
+volumes:
+  imdb-videogame-database:
