@@ -1,4 +1,4 @@
-package personal.videogames.model
+package personal.videogames.model // ktlint-disable filename
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener
 import javax.persistence.* // ktlint-disable no-wildcard-imports
