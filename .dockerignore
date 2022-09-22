@@ -3,6 +3,6 @@
 .git
 .env
 *Dockerfile*
-*docker-compose*
+assets/docker-compose.yaml
 *.md
 test
