@@ -1,34 +1,16 @@
-version: "3.8"
-
+version: "3.7"
 services:
   mysqldb:
-    container_name: mysqldb
-    image: mysql #:5.7
-    #restart: always
+    command:
+      - --explicit_defaults_for_timestamp
     ports:
       - '3307:3306'
+    image: mysql:5.7
     environment:
-      #TZ: UTC
-      MYSQL_ROOT_PASSWORD: root
-      #MYSQL_ROOT_USERNAME: root
-      MYSQL_ROOT_HOST: localhost
-      MYSQL_DATABASE: videogames
-    command: --disable-partition-engine-check
+      - "MYSQL_ROOT_PASSWORD=root"
+      - "MYSQL_ROOT_HOST=localhost"
+      - "MYSQL_DATABASE=videogames"
     volumes:
-      - ./db:/var/lib/mysql/data
-
-  api-imdb-videogames:
-    image: api-imdb-videogames:latest
-    container_name: api-imdb
-    #depends_on:
-      #- mysqldb
-    environment:
-      TZ: UTC
-      LOG_LEVEL: debug
-      DB_URL: jdbc:mysql://mysql:3306/mysqldb
-      DB_USERNAME: root
-      DB_PASSWORD: root
-    ports:
-      - '8080:8080'
+      - ./db:/var/lib/mysqldb
 volumes:
   db:
