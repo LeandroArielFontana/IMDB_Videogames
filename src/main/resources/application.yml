@@ -18,8 +18,8 @@ spring:
         show_sql: true
   datasource:
     url: jdbc:mysql://localhost:3307/videogames
-    username: root
-    password: root
+    username: imdbdatabase
+    password: imdbvideogames
     driverClassName: com.mysql.cj.jdbc.Driver
   application:
     name: api-imdb-videogames
