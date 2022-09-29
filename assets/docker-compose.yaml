@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  mysqldb:
+    command:
+      - --explicit_defaults_for_timestamp
+    ports:
+      - '3307:3306'
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=videogames
+      - MYSQL_ROOT_HOST=127.0.0.1
+    volumes:
+      - ./db:/var/lib/mysqldb
+volumes:
+  db:

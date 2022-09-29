@@ -17,9 +17,9 @@ spring:
       hibernate:
         show_sql: true
   datasource:
-    url: ${DB_URL}
-    username: ${DB_USER}
-    password: ${DB_PASS}
+    url: jdbc:mysql://localhost:3307/videogames
+    username: imdbdatabase
+    password: imdbvideogames
     driverClassName: com.mysql.cj.jdbc.Driver
   application:
     name: api-imdb-videogames

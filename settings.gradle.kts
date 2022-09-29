@@ -1,1 +1,1 @@
-rootProject.name = "videogames"
+rootProject.name = "api-imdb-videogames"

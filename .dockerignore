@@ -1,0 +1,8 @@
+.dockerignore
+.gitignore
+.git
+.env
+*Dockerfile*
+assets/docker-compose.yaml
+*.md
+test
